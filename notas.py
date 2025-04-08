@@ -23,7 +23,7 @@ else:
     p1 = st.number_input(f'Digite sua nota total da p1')
   else:
     p1 = st.number_input(f'Digite sua nota total da p1 (A soma das {total_provas} provas):')
-  p1_nota_final = (p1+total_provas)/total_prof
+  p1_nota_final = p1/total_prof
 
   #Pegando a nota da P2.
   p2 = st.number_input('Digite sua nota da p2:', min_value=0.0, max_value=10.0)
