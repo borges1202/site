@@ -5,7 +5,9 @@ st.title("Calculadora de notas.")
 #Sidebar para escolher a materia
 with st.sidebar:
   st.header('Escolha a Materia')
-  materia = st.selectbox('Escolha uma opção', ['','Matematica', 'Biologia', 'Fisica', 'Lingua Portuguesa', 'Arte', 'Historia', 'Quimica', 'Geografia', 'Ingles', 'Filosofia/Sociologia']).upper()
+  materia = st.selectbox('Escolha uma opção', ['','Matematica', 'Biologia', 'Fisica', 'Lingua Portuguesa',
+ 'Arte', 'Historia', 'Quimica', 'Geografia', 'Ingles', 'Filosofia/Sociologia']).upper()
+
 #Se a materia não for escolhida, vai aparece 'esperando a materia'.
 if materia == '':
   st.write('esperando a materia...')
@@ -16,14 +18,13 @@ else:
   
   #Pegando as info necessarias
   total_provas = st.number_input('Quantidade de provas:',min_value=1, max_value=3)
-  total_prof = st.number_input('Quantidade de profesores:',min_value=1, max_value=3)
 
   #Pegando a soma das provas da P1 e fazendo o Calculo.
   if total_provas == 1:
     p1 = st.number_input(f'Digite sua nota total da p1')
   else:
     p1 = st.number_input(f'Digite sua nota total da p1 (A soma das {total_provas} provas):')
-  p1_nota_final = p1/total_prof
+  p1_nota_final = p1/total_provas
 
   #Pegando a nota da P2.
   p2 = st.number_input('Digite sua nota da p2:', min_value=0.0, max_value=10.0)
